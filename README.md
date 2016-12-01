@@ -5,7 +5,7 @@ Power BI Embedded lets you create visually impactful and interactive reports aga
 #Sample Application
 In this sample we have added PowerBi Emebedded to a simple **ASP.NET MVC 4.5.2** application.
 
-####Reports Controller
+####Controllers/ReportsController.cs
 
 In the constructor we initialise the required global variables to work with the PowerBi SDK. These are stored in the **web.config** file and accessed via the **ConfigurationManager**.
 ```
@@ -94,7 +94,7 @@ public async Task<ActionResult> Report(string reportId)
         }
 }
 ```
-####ReportViewModel
+####Models/ReportViewModel.cs
 This is the model that will be constructed in the ReportsController and passed back to the view. It encapsulates both the report to embed in the DOM and the PowerBi access token.
 ```
 public class ReportViewModel
@@ -103,7 +103,7 @@ public class ReportViewModel
     public string AccessToken { get; set; }
 }
 ```
-####ReportsViewModel
+####Models/ReportsViewModel.cs
 A simple collection of PowerBi reports to be passed back to the Index view.
 ```
 public class ReportsViewModel
